@@ -1,0 +1,1 @@
+Min element of array
