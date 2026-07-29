@@ -62,10 +62,12 @@ int main(){
     for(int i = 0; i < n; i++){
         cin>>arr[i];
     }
+    
     // calling mergesort
     mergeSort(arr, 0, n-1);
     //printing values after sorting
     for(int i = 0; i < n; i++){
         cout<<arr[i]<<" ";
+
     }
 }
