@@ -4,7 +4,7 @@ using namespace std;
 
 void permut(int arr[],vector<vector<int>>&ans,vector<int>&temp,vector<bool>&visited){
 
-    //base condition
+    //base condition 
     if(visited.size() == temp.size()){
         ans.push_back(temp);
         return;
