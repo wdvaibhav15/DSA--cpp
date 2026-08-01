@@ -42,7 +42,7 @@ int main() {
     cout << "Binary numbers are:\n";
 
     for (const string& binary : ans) {
-        cout << binary << " ";
+        cout << binary << endl;
     }
 
     return 0;
