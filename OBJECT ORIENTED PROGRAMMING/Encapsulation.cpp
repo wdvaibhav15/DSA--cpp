@@ -3,24 +3,31 @@ using namespace std;
 
 class Student {
 private:
-    int marks;
+    string name;
+    int age;
 
 public:
-    void setMarks(int m) {
-        marks = m;
+    void setage(int m) {
+        if(m>0 && m<=100){
+            age = m;
+        }
+        else{
+            cout<<"Invalid age";
+        }
+        
     }
 
-    int getMarks() {
-        return marks;
+    int getage() {
+        return age;
     }
 };
 
 int main() {
     Student s;
 
-    s.setMarks(95);
+    s.setage(95);
 
-    cout << s.getMarks();
+    cout << s.getage();
 
     return 0;
 }

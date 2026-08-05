@@ -1,17 +1,31 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-class Demo {
-public:
-    Demo() {
-        cout << "Constructor Called\n";
+class Student {
+    public:
+    string name;
+    int roll_no;
+    int age;
+    
+    //constructor
+    Student(string n, int r, int a){
+        name = n;
+        roll_no = r;
+        age = a;
+    }
+    
+    void display(){
+        cout<<name<<" "<<roll_no<<" "<<age<<endl;
     }
 
-    ~Demo() {
-        cout << "Destructor Called\n";
+    //destructor
+    ~Student(){
+        cout<<"Destructor called"<<endl;
+        cout<<name<<" "<<roll_no<<" "<<age<<endl;
     }
 };
-
-int main() {
-    Demo d;
-}
+int main(){
+    Student s1("Vaibhav", 1, 540);
+    s1.display();
+    
+  }
