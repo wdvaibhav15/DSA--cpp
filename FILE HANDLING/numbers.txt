@@ -1,0 +1,4 @@
+Original data: 
+234567 5 123 1 34567 
+Sorted data: 
+1 5 123 34567 234567 
