@@ -13,7 +13,8 @@ public:
 };
 
 int main() {
-    node *head, *tail = NULL;
+    node *head = NULL;
+    node *tail = NULL;
 
     int n;
     cout << "Enter the no of elements in array: ";
@@ -41,7 +42,7 @@ int main() {
 
     // Take index
     int index;
-    cout << "Enter the index: ";
+    cout << "Enter the index at which element is inserted : ";
     cin >> index;
 
     // Take element
@@ -49,35 +50,20 @@ int main() {
     cout << "Enter the element: ";
     cin >> element;
 
-    // Check index
-    if (index < 0 || index > n) {
-        cout << "Invalid index";
-        return 0;
-    }
+    tail = head;
 
-    // Insert at index 0
-    if (index == 0) {
-
-        node *temp = new node(element);
-
-        temp->next = head;
-        head = temp;
-    }
-
-    // Insert at other index
-    else {
-
-        node *tail = head;
-
-        // Move tail to node before required index
-        for (int i = 0; i < index - 1; i++) {
-            tail = tail->next;
+    for(int i=0;i<n;i++){
+        node *temp = new node(arr[i]);
+        if(head == NULL){
+            head = temp;
+            tail = temp;
+        }else{
+            if(i == index-1){
+                node *temp = new node (element);
+                temp->next = tail->next;
+                tail->next = temp;
+            }
         }
-
-        node *temp = new node(element);
-
-        temp->next = tail->next;
-        tail->next = temp;
     }
 
     // Print linked list
