@@ -42,6 +42,9 @@ int main() {
     cin >> k;
     int count = 0;
     node* temp = head;
+    if(head == NULL || head->next == NULL){
+        return 0;
+    }
 
     while(temp != NULL) {
         count++;
