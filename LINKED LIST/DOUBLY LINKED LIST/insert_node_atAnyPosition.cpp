@@ -51,6 +51,19 @@ int main() {
     int data;
     cout << "Enter the data: ";
     cin >> data;
+    // insert at index 0
+    // if the linked list is empty
+    if(position == 0) {
+       if(head == NULL) {
+           head = new node(data);
+       }else{
+        // if the linked list is not empty
+           node* temp = new node(data);
+           temp->next = head;
+           head->prev = temp;
+           head = temp;
+       }
+    }
 
     node* current = head;
     while(--position){
@@ -62,6 +75,12 @@ int main() {
     temp->prev = current;
     current->next = temp;
     temp->next->prev = temp;
+
+    if(current->next == NULL) {
+        node *temp = new node(data);
+        current->next = temp;
+        temp->prev = current;
+    }
 
     
     // print the linked list 
