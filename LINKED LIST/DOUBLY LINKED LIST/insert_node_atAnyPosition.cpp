@@ -53,15 +53,15 @@ int main() {
     cin >> data;
 
     node* current = head;
-    while(position--){
+    while(--position){
         current = current->next;
     }
 
     node* temp = new node(data);
-    temp->next = current;
-    temp->prev = current->prev;
-    current->prev->next = temp;
-    current->prev = temp;
+    temp->next = current->next;
+    temp->prev = current;
+    current->next = temp;
+    temp->next->prev = temp;
 
     
     // print the linked list 
