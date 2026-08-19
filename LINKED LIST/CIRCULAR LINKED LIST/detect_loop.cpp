@@ -46,9 +46,21 @@ int main() {
         fast = fast->next->next;
         if (slow == fast) {
             cout << "Contains loop." << endl;
-            return 0;
+            break;
         }
     }
-    cout << "Containing not a loop." << endl;
+    // No loop
+    if(fast == NULL || fast->next == NULL) {
+        return 0;
+    }
+
+    // count the lenght of loop
+    int count =1;
+    slow = fast->next;
+    while(slow != fast) {
+        count++;
+        slow = slow->next;
+    }
+    cout<< "Loop length: " << count << endl;
     return 0;
 }
