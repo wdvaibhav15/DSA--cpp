@@ -50,7 +50,7 @@ int main() {
         }
     }
     // No loop
-    if(fast == NULL || fast->next == NULL) {
+    if(fast != NULL || fast->next != NULL) {
         return 0;
     }
 
