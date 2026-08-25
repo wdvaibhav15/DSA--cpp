@@ -1,53 +1,70 @@
 #include <iostream>
+using namespace std;
 
 class Stack {
 private:
-    static const int MAX = 1000;
-    int topIndex;
-    int arr[MAX];
+    int *arr;
+    int size;
+    int top;
 
 public:
-    Stack() : topIndex(-1) {}
-
-    bool push(int x) {
-        if (topIndex >= (MAX - 1)) {
-            std::cout << "Stack Overflow\n";
-            return false;
-        }
-        arr[++topIndex] = x;
-        return true;
+    // constructor
+    Stack( int s) {
+        size = s;
+        top = -1;
+        arr = new int[s];
     }
 
-    int pop() {
-        if (topIndex < 0) {
+    // push operation
+    void push(int value) {
+        if (top == size - 1) {
+            std::cout << "Stack Overflow\n";
+            return;
+        }
+        top++;
+        arr[top] = value;
+        cout<<"pushed : "<<value<<endl;
+    }
+
+    // pop operation
+    void pop() {
+        if (top < 0) {
+            std::cout << "Stack Underflow\n";
+            return;
+        }
+        cout<<"popped : "<<arr[top]<<endl;
+        top--;
+    }
+
+    // peek operation
+    int peek() {
+        if (top < 0) {
             std::cout << "Stack Underflow\n";
             return -1;
         }
-        return arr[topIndex--];
+        return arr[top];
     }
 
-    int peek() const {
-        if (topIndex < 0) {
-            std::cout << "Stack is Empty\n";
-            return -1;
-        }
-        return arr[topIndex];
-    }
+    // check empty or not
+    bool isEmpty() {
 
-    bool isEmpty() const {
-        return (topIndex < 0);
+        return top < 0;
+    }
+    // check the size of stack
+    int getSize() {
+        return top + 1;
     }
 };
 
 int main() {
-    Stack s;
+
+    Stack s(5);
     s.push(10);
     s.push(20);
     s.push(30);
-
-    std::cout << "Popped: " << s.pop() << "\n";
-    std::cout << "Top: " << s.peek() << "\n";
-    std::cout << "Is Empty: " << (s.isEmpty() ? "Yes" : "No") << "\n";
-
+    s.pop();
+    s.pop();
+    s.peek();
+    s.getSize();
     return 0;
 }
