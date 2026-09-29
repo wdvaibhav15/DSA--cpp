@@ -1,6 +1,11 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+// emplemented using a doubly linked list
+// list is a doubly linked list
+// list is a dynamic array
+// list is a sequence container
+// list is a container adaptor
 int main(){
     list<int>l1;
     l1.push_back(1);

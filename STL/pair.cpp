@@ -1,6 +1,11 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+// implemensted using class
+// pair is used to store key value pair
+// pair<type1 , type2> name;
+// pair<string,int> p1;
+// p1.first = "abc";
 int main(){
     pair<int,int> p1;
     p1.first = 10;
