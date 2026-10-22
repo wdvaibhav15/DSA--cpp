@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 
+// class initialization
 class Node {
 public:
     int data;
